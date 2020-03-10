@@ -7,7 +7,7 @@
     mov ah,2
     int 21h    
     
-       mov dl,10;Enter
+       mov dl,13;line ko first ma jane
     
     mov ah,2
     int 21h
