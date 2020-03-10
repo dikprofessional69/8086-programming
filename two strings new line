@@ -1,0 +1,57 @@
+    ;program to display 2 strings in new lines
+;with spac and new line using macro
+
+ space macro
+    mov dl,10;Enter
+    
+    mov ah,2
+    int 21h    
+    
+       mov dl,10;Enter
+    
+    mov ah,2
+    int 21h
+     
+    
+    endm
+    
+
+.model small
+
+.stack 100h
+
+.data 
+
+str1 db 'Pickle$'
+ 
+str2 db 'Rick$' 
+
+.code
+
+main proc
+
+mov ax,@DATA
+mov ds,ax
+
+mov dl,offset str1;purai address janxa dl ma
+
+mov ah,9
+int 21h
+
+space  
+
+
+mov dl,offset str1
+
+mov ah,9;string print garne subroutine
+int 21h
+
+;here hlt jastai
+
+
+mov ah,4ch
+int 21h        
+
+main endp
+
+end main
