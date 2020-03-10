@@ -1,0 +1,64 @@
+    ;program to display AtoZ with space
+;with spac and new line using macro
+
+ space macro
+    mov dl,32;space
+    
+    mov ah,2
+    int 21h    
+   
+     
+    
+    endm
+    
+print macro par1
+    mov dl,par1
+    
+    mov ah,2
+    int 21h       
+    
+    endm    
+
+
+.model small
+
+.stack 100h
+
+.data 
+
+
+
+
+.code
+
+main proc
+
+
+    mov bl,65  ;here dont do dl will collide with mathi ko
+    
+    mov cx,26
+
+
+this:
+
+print bl 
+
+space
+
+inc bl
+
+
+loop this
+
+
+
+
+;here hlt jastai
+
+
+mov ah,4ch
+int 21h        
+
+main endp
+
+end main
