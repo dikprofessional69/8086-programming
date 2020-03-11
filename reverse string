@@ -1,0 +1,75 @@
+.model small
+
+
+
+.stack 100h
+
+
+
+.data 
+
+
+
+str db "JON MOXLEY$"
+
+
+
+
+
+.code
+
+main proc
+
+
+mov ax,@DATA
+mov ds,ax
+
+mov si,offset str  
+
+mov cx,10
+
+mov bx,9
+
+  this:
+  
+    add si,bx
+    
+    mov dx,[si]
+    
+    sub si,bx
+    
+    sub bx,1
+
+
+    
+    
+mov ah,2
+
+int 21h  
+  
+  
+  
+  
+  
+  loop this
+
+
+
+
+;here tala ko exit ho
+
+
+
+
+
+mov ah,4ch
+
+int 21h        
+
+
+
+main endp
+
+
+
+end main
