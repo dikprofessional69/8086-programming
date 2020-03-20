@@ -52,22 +52,9 @@ print macro par1  ;accepts register or [si] as a whole lie par1 replaced by it
 
 .data 
 
-
-
-
-
-
-
-
-
 .code
 
-
-
 main proc
-
-
-
 
 
 mov si,1000h
@@ -79,24 +66,13 @@ print [si]
 print [si+1] 
 
 
+mov [1001h],'L'
 
-
+print [1001h]
 
 
 mov bl,'x' ;doing 5 here would be wrong as no ascii conversion in print macro
 print bl
-
-
-
-
-
-
-
-;here hlt jastai
-
-
-
-
 
 mov ah,4ch
 
