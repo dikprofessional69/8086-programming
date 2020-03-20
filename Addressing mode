@@ -1,0 +1,111 @@
+ ;program to display AtoZ with space
+
+;with spac and new line using macro
+
+
+
+ space macro
+
+    mov dl,32;space
+
+    
+
+    mov ah,2
+
+    int 21h    
+
+   
+
+     
+
+    
+
+    endm
+
+    
+
+print macro par1  ;accepts register or [si] as a whole lie par1 replaced by it
+
+    mov dl,par1
+
+    
+
+    mov ah,2
+
+    int 21h       
+
+    
+
+    endm    
+
+
+
+
+
+.model small
+
+
+
+.stack 100h
+
+
+
+.data 
+
+
+
+
+
+
+
+
+
+.code
+
+
+
+main proc
+
+
+
+
+
+mov si,1000h
+
+mov [si],'v'
+mov [si+1],'e'
+ 
+print [si]
+print [si+1] 
+
+
+
+
+
+
+mov bl,'x' ;doing 5 here would be wrong as no ascii conversion in print macro
+print bl
+
+
+
+
+
+
+
+;here hlt jastai
+
+
+
+
+
+mov ah,4ch
+
+int 21h        
+
+
+
+main endp
+
+
+
+end main
